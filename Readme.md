@@ -52,6 +52,7 @@ docker logs "CONTAINER ID"
 ```
 2.9 Pueden validar en el navegador con http://localhost:5050 o revisen el ip con docker inspect
 
+
 ```
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 ```
