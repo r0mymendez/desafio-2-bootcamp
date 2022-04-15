@@ -50,11 +50,33 @@ docker ps -a
 ```
 docker logs "CONTAINER ID"
 ```
+```
+desafio-2-bootcamp ( master ) $ docker logs 5bf4838af30f
+ * Serving Flask app 'desafio2_app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5050
+ * Running on http://172.17.0.2:5050 (Press CTRL+C to quit)
+172.17.0.1 - - [15/Apr/2022 15:28:39] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [15/Apr/2022 15:28:39] "GET /static/style.css HTTP/1.1" 200 -
+172.17.0.1 - - [15/Apr/2022 15:28:39] "GET /favicon.ico HTTP/1.1" 404 -
+
+```
 2.9 Pueden validar en el navegador con http://localhost:5050 o revisen el ip con docker inspect
 
+<img width="1072" alt="image" src="https://user-images.githubusercontent.com/39013829/163589974-4bfa2e39-60ac-4394-a23f-28cabe9620be.png">
 
 ```
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
+```
+
+```
+desafio-2-bootcamp ( master ) $ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 5bf4838af30f
+172.17.0.2
 ```
 
 ⌨️ con ❤️ por [roxsross](https://github.com/roxsross) 😊
